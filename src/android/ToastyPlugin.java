@@ -47,8 +47,8 @@ public class ToastyPlugin extends CordovaPlugin {
             return false;
         }
         
-        byte[] filedata = Base64.getDecoder().decode(message);
-        byte[] gifBytes = Jnbis.wsq().decode(filedata).toGif().asByteArray();
+        //byte[] filedata = Base64.getDecoder().decode(message);
+        File gifBytes = new File(Jnbis.wsq().decode(message).toPng().toString());
         
         message = "Hoy: " + gifBytes;
                             
