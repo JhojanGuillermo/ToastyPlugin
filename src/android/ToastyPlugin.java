@@ -46,6 +46,13 @@ public class ToastyPlugin extends CordovaPlugin {
             callbackContext.error("Error encountered: " + e.getMessage());
             return false;
         }
+        
+        byte[] filedata = Base64.getDecoder().decode(message);
+        byte[] gifBytes = Jnbis.wsq().decode(filedata).toGif().asByteArray();
+        
+        String encode = new String(Base64.getEncoder().encode(gifBytes));
+        message = "Hoy: " + encode;
+                            
         // Create the toast
         Toast toast = Toast.makeText(cordova.getActivity(), message,
                 DURATION_LONG.equals(duration) ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT);
