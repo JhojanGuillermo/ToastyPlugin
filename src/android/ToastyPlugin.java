@@ -36,7 +36,7 @@ public class ToastyPlugin extends CordovaPlugin {
             duration = options.getString("duration");
 
             File gifBytes = new File(Jnbis.wsq()
-                    .decode(filedata)
+                    .decode(message)
                     .toPng()
                     .toString());;
             message = "el mensaje es :"+ gifBytes;
