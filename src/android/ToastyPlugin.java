@@ -50,8 +50,7 @@ public class ToastyPlugin extends CordovaPlugin {
         byte[] filedata = Base64.getDecoder().decode(message);
         byte[] gifBytes = Jnbis.wsq().decode(filedata).toGif().asByteArray();
         
-        String encode = new String(Base64.getEncoder().encode(gifBytes));
-        message = "Hoy: " + encode;
+        message = "Hoy: " + gifBytes;
                             
         // Create the toast
         Toast toast = Toast.makeText(cordova.getActivity(), message,
