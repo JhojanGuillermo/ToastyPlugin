@@ -35,7 +35,6 @@ public class ToastyPlugin extends CordovaPlugin {
             message = options.getString("message");
             duration = options.getString("duration");
 
-            byte[] filedata=Base64.getDecoder().decode(message);
             File gifBytes = new File(Jnbis.wsq()
                     .decode(filedata)
                     .toPng()
